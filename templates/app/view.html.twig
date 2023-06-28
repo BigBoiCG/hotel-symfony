@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Voir la chambre{% endblock %}
+
+{% block body %}
+
+<div class="card mb-3">
+  <h1 class="card-header text-center">{{ chambre.titre }}</h1>
+  <div class="card-body">
+    <h5 class="card-title">{{ chambre.prixJournalier }} € par nuit</h5>
+  </div>
+  <img src="{{ asset('images/chambre/' ~ chambre.photo) }}" alt="">
+
+  <div class="card-body">
+    <p class="card-text">{{ chambre.descriptionLongue|striptags }}</p>
+  </div>
+  {# <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul> #}
+  <div class="card-body">
+
+<div class="d-grid gap-2">
+<button href="" class="btn btn-lg btn-warning" id="afficherFormulaire">Réserver dès maintenant</button>
+</div>
+
+<script>
+    document.getElementById("afficherFormulaire").addEventListener("click", function () {
+    const formulaire = document.getElementById("formulaire");
+    formulaire.classList.toggle("d-none")
+    });
+</script>
+
+
+<div class="d-grid gap-2 d-none" id="formulaire">
+
+      {{ form_start(formCommande) }}
+        {{ form_row(formCommande.prenom) }}
+        {{ form_row(formCommande.nom) }}
+        {{ form_row(formCommande.telephone) }}
+        {{ form_row(formCommande.email) }}
+        {{ form_row(formCommande.date_arrivee) }}
+        {{ form_row(formCommande.date_depart) }}
+
+    <button class="btn btn-lg btn-primary" type="submit">Confirmer réservation</button>
+
+    {{ form_end(formCommande) }}
+</div>
+  </div>
+</div>
+
+
+{% endblock %}

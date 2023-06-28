@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vos avis{% endblock %}
+
+{% block body %}
+
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success text-center">
+        {{ message }}
+    </div>
+{% endfor %}
+<div class="container d-flex flex-row justify-content-around">
+<h1 class="text-center mt-4">Vos avis</h1>
+<form action="">
+    <div class="form-group container mt-4 d-flex flex-row justify-content-around">
+      <select class="form-select" id="filterSelect" name="filterSelect">
+        <option>Filtrer les résultats ...</option>
+        <option value="">Tous les avis</option>
+        <option value="general">Observations générales</option>
+        <option value="chambres">Avis sur les chambres</option>
+        <option value="resto">Avis sur le restaurant</option>
+        <option value="spa">Avis sur le spa</option>
+      </select>
+    <button class="btn btn-primary mx-2" type="submit">Filtrer</button>
+    </div>
+</form>
+</div> 
+
+<div class="container col-8">
+{% for comment in filter %}
+  <div class="card mt-3">
+    <div class="card-body">
+      <h4 class="card-title">{{ comment.notation }}/5</h4>
+      <h6 class="card-subtitle mb-2 text-muted">{{ comment.prenom }} {{ comment.nom }}</h6>
+      <p class="card-text text-muted"> A propos de 
+      {% if comment.categorie == "chambres" %}
+          nos chambres
+        {% elseif comment.categorie == "resto" %}
+          notre restaurant
+        {% elseif comment.categorie == "spa" %}
+            notre spa
+        {% else %}
+            notre hôtel
+      {% endif %}</p>
+      <p class="card-text">{{ comment.contenu }}</p>
+      <p class="card-text text-muted">{{ comment.dateEnregistrement|date('d/m/Y, H:i:s') }}</p>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+<div class="container col-4">
+      {{ form_start(formAvis) }}
+        {{ form_row(formAvis.prenom) }}
+        {{ form_row(formAvis.nom) }}
+        {{ form_row(formAvis.categorie) }}
+        {{ form_row(formAvis.contenu) }}
+        {{ form_row(formAvis.notation) }}
+
+    <button class="btn btn-lg btn-primary" type="submit">Poster un commentaire</button>
+
+    {{ form_end(formAvis) }}
+</div>
+
+
+
+
+
+{% endblock %}

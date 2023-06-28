@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes nos chambres{% endblock %}
+
+{% block body %}
+<h1 class="text-center mt-4">Toutes nos chambres</h1>
+
+
+<div class="d-flex row">
+{% for chambre in chambres %}
+<div class="card mb-3 col-3 mx-auto" style="width: 18rem;">
+  <img src="{{ asset('images/chambre/' ~ chambre.photo) }}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ chambre.titre }}</h5>
+    <p class="card-text">{{ chambre.descriptionCourte }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{ chambre.prixJournalier }} € par nuit</li>
+  </ul>
+  <div class="card-body">
+    <a href="{{ path('view_chambre', {id: chambre.id}) }}" class="btn btn-info">En savoir plus</a>
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+ DONE :
+ - création des tables admin & chambre
+ - make:user sur le Admin
+ - récupérer le izi Admin
+ - navbar
+ - créer un profil admin pour pouvoir se connecter
+ - création inscription/connexion/déconnexion admin
+ - sécurisation des routes admin 
+ - gestion CRUD back office
+    . sections du Dashboard + retour vers le site
+    . pas de modif du password pour l'edit du Admin
+    . pas de modif de l'image nécessaire
+ - création de la table slider
+ - slider sur l'accueil
+ - faire des 3 routes des chambres un seul truc dans le controller avec un seul twig, et des paramètres (en fonction du lien, passer le min et le max en get, et générer en fonction)
+ - affichage de toutes les chambres
+ - table commandes
+ - page view
+ - gestion du form de création de commandes sur les pages individuelles des chambres
+ - CRUD commande
+- page avis :
+    . postage de commentaires SANS connexion
+    . filtres selon la catégorie 
+    . CRUD avis
+ - bouton impression de page dans le footer
+ - page resto :
+    . affichage page carte
+    . téléchargement du PDF de la carte
+
+ TODO : 
+- page spa : création d'une autre réservation ?
+- page hôtel : bullshittage de haut niveau
+- page accès : plan très versaillais
+- page contact : formulaire de contact, inchallah mailer pour envoyer les infos (pas besoin de les stocker en BDD)
+- page d'actualités : soit des articles bullshit, soit une API si on a la motiv
+- multilingue : bouton EN/FR, traduction si on est chauds
+- mise en ligne :
+    . envoyer le compte admin à Vincent + les liens des pages cachées de register et de login
+
+FINALISATION :
+- refaire les drapeaux ?
+- modifier les photos des chambres
+- Faire un affichage de toutes les chambres sur une seule page, utiliser un form pour envoyer en Get les paramètres de notre fonction 'chambres' et ainsi faire des recherches personnalisées (cf AppController)
+- Finaliser champs CRUD commande
+
+ ERREURS :
+ - boutons < et > du carousel pas là
+
+
+ 

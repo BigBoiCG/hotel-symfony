@@ -1,0 +1,135 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre restaurant{% endblock %}
+
+{% block body %}
+
+{% if select == 'brasserie' %}
+    <h1 class="text-center my-4">Menu midi</h1>
+    <img src="{{ asset('images/resto/brasserie.jpg') }}" alt="" style="width: 100%; height: 500px; object-fit: cover;">
+    <h3 class="text-center my-5">Entrées</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Couronnes d'oignon frit</strong>
+            <p class="text-muted mx-3 col-6">Summum de saveur et de croustillance, à consommer aux dépens de son haleine</p>
+            <p class="mx-3 col-2">6€</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Assortiment Tex-Mex</strong>
+            <p class="text-muted mx-3 col-6">Foisonnement de morceaux de poulets divers relevés à souhait, et frits dans le mélange secret de 11 herbes et épices de notre chef américain Harland Sanders</p>
+            <p class="mx-3 col-2">11€</p>
+        </div>
+    <h3 class="text-center my-5">Plats</h3>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Fricassée d'agneau mariné</strong>
+            <p class="text-muted mx-3 col-6">Servie dans son écrin de pain, accompagné de laitue fraîche, de tomates du jardin et d'oignons, sur lit d'allumettes de pommes de terre frites</p>
+            <p class="mx-3 col-2">15€</p>
+        </div>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Plat du jour</strong>
+            <p class="text-muted mx-3 col-6">Farandole de restes de la semaine et de produits approchant de leur date de péremption, présentée avec goût et généreusement épicée pour camoufler le goût</p>
+            <p class="mx-3 col-2">20€</p>
+        </div>
+    <h3 class="text-center my-5">Desserts</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Tarte suédoise croustillante</strong>
+            <p class="text-muted mx-3 col-6">Friandises au caramel enveloppées de chocolat et disposées sur de la pâte brisée</p>
+            <p class="mx-3 col-2">4€</p>
+        </div>
+    <h3 class="text-center my-5">Boissons</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Délice tropical</strong>
+            <p class="text-muted mx-3 col-6">Carrés de sucre dilués dans du jus de fruit, préparé par nos mixologues</p>
+            <p class="mx-3 col-2">3€ (33cl)</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Panaché</strong>
+            <p class="text-muted mx-3 col-6">Bière de l'abbayée de Kronenbourg savamment mariée à l'eau du robinet</p>
+            <p class="mx-3 col-2">6€ (33cl)</p>
+        </div>
+<div class="d-grid gap-2 my-3">
+<a href ="{{ asset('downloads/carte_midi.pdf') }}" download class="btn btn-lg btn-info">Télécharger la carte</a>  
+</div>    
+
+{% elseif select == 'degustation' %}
+<h1 class="text-center my-4">Gourmandises et pâtisseries</h1>
+    <img src="{{ asset('images/resto/cafe-gourmand-1.jpg') }}" alt="" style="width: 100%; height: 500px; object-fit: cover;">
+    <h3 class="text-center my-5">Pâtisseries</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Choux à la crème</strong>
+            <p class="text-muted mx-3 col-6">Bonnes grosses boules de pâte gorgées de crème généreuse</p>
+            <p class="mx-3 col-2">6€</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Sorbet</strong>
+            <p class="text-muted mx-3 col-6">Glace rafraîchissante pour les jours ensoleillés, parfum au choix parmi une liste exceptionnelle de saveurs exotiques et raffinées (choix possibles : vanille, fraise, chocolat)</p>
+            <p class="mx-3 col-2">5€</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Café gourmand</strong>
+            <p class="text-muted mx-3 col-6">Torréfié par nos barristas directement au distributeur de la salle de repos du personnel ; accompagnements dans la limite des stocks disponible de la boulangerie à côté du Franprix</p>
+            <p class="mx-3 col-2">7€</p>
+        </div>
+    <h3 class="text-center my-5">Boissons</h3>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Vin rouge à la pression</strong>
+            <p class="text-muted mx-3 col-6">Cuvée Villageoise 2023, vieilli en cubi dans notre cave à vin</p>
+            <p class="mx-3 col-2">3€ (12,5 cl)</p>
+        </div>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Maximator 9°</strong>
+            <p class="text-muted mx-3 col-6">Servie tiède et dans sa cannette pour une dégustation optimale</p>
+            <p class="mx-3 col-2">4€ (50 cl)</p>
+        </div>
+<div class="d-grid gap-2 my-3">
+<a href ="{{ asset('downloads/carte_degustation.pdf') }}" download class="btn btn-lg btn-info">Télécharger la carte</a>  
+</div>
+
+{% else %}
+<h1 class="text-center my-4">Menu soir</h1>
+    <img src="{{ asset('images/resto/diner.jpg') }}" alt="" style="width: 100%; height: 500px; object-fit: cover;">
+    <h3 class="text-center my-5">Entrées</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Assortiment de panés de poussins</strong>
+            <p class="text-muted mx-3 col-6">Collection de 20 pépites panées à partager, chacune renfermant le résultat d'une couvée entière de poussins broyée avec savoir-faire</p>
+            <p class="mx-3 col-2">20€</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Ramequin de pommes frites</strong>
+            <p class="text-muted mx-3 col-6">Généreusement portion de pommes de terres frites, servie dans un ramequin de plastique au style épuré, le tout généreusement garni de sauce</p>
+            <p class="mx-3 col-2">5€</p>
+        </div>
+    <h3 class="text-center my-5">Plats</h3>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Double sandwich américain</strong>
+            <p class="text-muted mx-3 col-6">Entre deux pains soigneusement grillés, une cascade de cheddar recouvre deux steaks cuits à point</p>
+            <p class="mx-3 col-2">10€</p>
+        </div>
+        <div class="container d-flex flex-row  mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Plat du jour</strong>
+            <p class="text-muted mx-3 col-6">Se référer à la carte du midi, puisqu'il est plus que probable que vous retrouviez le soir ce qui n'a pas pu être écoulé le midi</p>
+            <p class="mx-3 col-2">20€</p>
+        </div>
+    <h3 class="text-center my-5">Desserts</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Sorbet à l'américaine</strong>
+            <p class="text-muted mx-3 col-6">Egalement connu sous le nom de "maque fleuri", sorbet à la fonte quasi-immédiate avec plus de colorants que de goût, et parsemé de miettes de sucreries diverses pour en faire oublier l'indigence</p>
+            <p class="mx-3 col-2">5€</p>
+        </div>
+    <h3 class="text-center my-5">Boissons</h3>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Girafe de Coca-Cola</strong>
+            <p class="text-muted mx-3 col-6">Nos maîtres sommeliers recommandent d'en prendre une par personne afin de vivre la véritable expérience d'un repas à l'américaine</p>
+            <p class="mx-3 col-2">1,50€ (33cl)</p>
+        </div>
+        <div class="container d-flex flex-row mx-auto justify-content-around">
+            <strong class="mx-3 col-4">Bud Lite</strong>
+            <p class="text-muted mx-3 col-6">Découvrez l'eau au vague goût de bière que les jeunes d'Outre-Atlantique doivent attendre d'avoir 21 ans pour savourer</p>
+            <p class="mx-3 col-2">4€ (33cl)</p>
+        </div>
+<div class="d-grid gap-2 my-3">
+<a href ="{{ asset('downloads/carte_soir.pdf') }}" download class="btn btn-lg btn-info">Télécharger la carte</a>  
+</div>
+{% endif %}
+
+
+{% endblock %}

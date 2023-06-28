@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous ?{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-5">Qui sommes-nous ?</h1>
+<img src="{{ asset('images/hotel/hotel.jpg') }}" alt="" style="width: 100%; height: 500px; object-fit: cover;" class="my-5">
+<div class="container d-flex flex-row">
+    <p>L'histoire de l'Hôtel Symfony commence en 1854, lorsqu'Edmond Symfony, alors dirigeant de la petite banque familiale qu'il avait fondée, décide unilatéralement de mettre fin à ses activités bancaires. Prenant soin de ne pas prévenir ses clients pour ne pas les paniquer,  mais habité du besoin de faire prospérer leurs économies malgré tout, il décide de réinvestir les actifs de la banque dans un commerce sûr et stable. Et c'est ainsi que le 9 avril 1854, il acquiert un hôtel particulier à Versailles pour y fonder l'Hôtel Symfony.</p>
+    <div class="container">
+
+        <img src="{{ asset('images/hotel/edmond.jpg') }}" alt="" style="width: 400px; height: 300px;">
+        <figcaption class="figure-caption">Gravure d'époque représentant Edmond Symfony, peu avant la fondation de l'hôtel</figcaption>    
+    </div>
+
+
+</div>
+
+{% endblock %}
