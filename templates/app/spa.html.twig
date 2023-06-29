@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre spa{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-4">Notre spa</h1>
+<p class="text-center text-muted my-2">Laissez-vous tenter par la grande variété de soins dispensés par notre personnel qualifiés, et ce au sein même de notre hôtel.</p>
+<p class="text-center text-muted my-2">Pour toute réservation ou question, merci de vous adresser directement à la réception de l'hôtel</p>
+
+{# détente : massage, thalasso
+relaxation : sauna, hammam
+plaisir : bains de bière #}
+<div>
+<h3 class="text-center mt-5 mb-4">Soins détente</h3>
+<div class="container mx-auto d-flex flex-row">
+    <div>
+        <img src="{{ asset('images/spa/massage.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+    </div>
+    <div class="container d-flex flex-column mx-auto">
+    <h5 class="mx-3 text-center">Massages</h5>
+    <p class="text-muted x-3 ">Bruits de malaxage</p>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}

@@ -6,6 +6,8 @@ use App\Entity\Avis;
 use App\Form\AvisType;
 use App\Entity\Commande;
 use App\Form\CommandeType;
+use jcobhams\NewsApi\NewsApi;
+use App\Service\CallApiService;
 use App\Repository\AvisRepository;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
@@ -29,6 +31,7 @@ class AppController extends AbstractController
     #[Route('/chambres/classique/{min}/{max}', name: 'chambres_classiques')]
     #[Route('/chambres/confort/{min}/{max}', name: 'chambres_confort')]
     #[Route('/chambres/suite/{min}/{max}', name: 'chambres_suites')]
+    #[Route('/chambres/search/{minSelect}/{maxSelect}', name: 'chambres_search')]
     public function chambres($min, $max, ChambreRepository $repo): Response
     {
         $chambres = $repo->findMinMax($min, $max);
@@ -40,11 +43,35 @@ class AppController extends AbstractController
     #[Route('/chambres/all', name: 'all_rooms')]
     public function allrooms(ChambreRepository $repo): Response
     {
+
         $chambres = $repo->findAll();
         return $this->render('app/allrooms.html.twig', [
             'chambres' => $chambres
         ]);
     }
+
+    #[Route('/chambres/filtered', name: 'filtered')]
+    public function filtered(ChambreRepository $repo, Request $request): Response
+    {
+        // dd($request->get('minSelect'));
+        if($request->get('minSelect') != null && $request->get('maxSelect') != null)
+        {
+        $min = $request->get('minSelect');
+        $max = $request->get('maxSelect');
+        // dd($min, $max);
+        $chambres = $repo->findMinMax($min, $max);         
+        }
+        else {
+        $min = 0;
+        $max = 1500;
+        // dd($min, $max);
+        $chambres = $repo->findMinMax($min, $max);         
+        }
+        return $this->render('app/filtered.html.twig', [
+            'chambres' => $chambres
+        ]);
+    }
+
 
     #[Route('/chambres/view/{id}', name: 'view_chambre')]
     public function view($id, ChambreRepository $repo, Request $request, EntityManagerInterface $manager): Response
@@ -123,6 +150,36 @@ class AppController extends AbstractController
     #[Route('/hotel/about', name: 'about')]
     public function about(): Response
     {
-        return $this->render('app/hotel.html.twig');
+        return $this->render('app/about.html.twig');
+    }
+
+    #[Route('/actu', name: 'actu')]
+    public function actu(): Response
+    {
+        $your_api_key = '374037188db646a78f0c69ee803e359c';
+        $newsapi = new NewsApi($your_api_key);
+        $q = 'hôtellerie';
+        $allArticles = $newsapi->getEverything($q, null, null, null, null, null, 'fr', 'popularity', null, 20);
+        // dd($newsapi->getSortBy()) : relevancy, popularity, publishedAt
+        dd($allArticles);
+        return $this->render('app/actu.html.twig');
+    }
+
+    #[Route('/contact', name: 'contact')]
+    public function contact(): Response
+    {
+        return $this->render('app/contact.html.twig');
+    }
+
+    #[Route('/hotel/acces', name: 'acces')]
+    public function acces(): Response
+    {
+        return $this->render('app/acces.html.twig');
+    }
+
+    #[Route('/spa', name: 'spa')]
+    public function spa(): Response
+    {
+        return $this->render('app/spa.html.twig');
     }
 }

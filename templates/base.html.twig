@@ -9,6 +9,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         {% block stylesheets %}
         {% endblock %}
 
@@ -57,11 +58,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Notre spa</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Détente</a>
+            <a class="dropdown-item" href="{{path('spa')}}">Détente</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Relaxation</a>
+            <a class="dropdown-item" href="{{path('spa')}}">Relaxation</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Plaisir</a>
+            <a class="dropdown-item" href="{{path('spa')}}">Plaisir</a>
           </div>
         </li>
         <li class="nav-item">
@@ -72,23 +73,23 @@
           <div class="dropdown-menu">
             <a class="dropdown-item" href="{{path('about')}}">Qui sommes-nous ?</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Accès</a>
+            <a class="dropdown-item" href="{{path('acces')}}">Accès</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Contact</a>
+            <a class="dropdown-item" href="{{path('contact')}}">Contact</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nos actualités</a>
+          <a class="nav-link" href="{{path('actu')}}">Nos actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Nous contacter</a>
+          <a class="nav-link" href="{{path('contact')}}">Nous contacter</a>
         </li>
       </ul>
       {% if app.user %}
         <a href="{{ path('admin_logout') }}" class="btn btn-danger">Se déconnecter</a>
       {% endif %}
-      <a href=""><i class="flag flag-fr mx-1"></i></a>
-      <a href=""><i class="flag flag-us mx-1"></i></a>
+      <a href=""><img src="{{ asset('images/hotel/drapeau-fr.jpg') }}" alt="Drapeau français" style="height: 25px" class="mx-3"></a>
+      <a href=""><img src="{{ asset('images/hotel/drapeau-uk.jpg') }}" alt="Drapeau britannique" style="height: 25px" class="mx-3"></a>
     </div>
   </div>
 </nav>

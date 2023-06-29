@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-4">Accès</h1>
+<div class="container mx-auto d-flex flex-row">
+    <div>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1969.0064032094735!2d2.120775085993147!3d48.79509511002652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67dc1621764b1%3A0xd8508358c5ca6eed!2sMaison%20Saint%20Louis!5e0!3m2!1sfr!2sfr!4v1688047198465!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="container d-flex flex-column mx-auto">
+        <strong class="mx-3">Adresse :</strong>
+        <p class="text-muted mx-3">24 bis rue du Maréchal Joffre, 78000 Versailles</p>
+    </div>
+    <div class="container d-flex flex-column mx-auto">
+        <strong class="mx-3">Transports en commun :</strong>
+        <p class="text-muted mx-3">A pied depuis les gares de Versailles Chantiers ou Versailles Rive Gauche</p>
+        <p class="text-muted mx-3">Bus : lignes 3, 10, 115, 439, 440</p>
+    </div>
+    <div class="container d-flex flex-column mx-auto">
+        <strong class="mx-3">En parachute :</strong>
+        <p class="text-muted mx-3">Au départ de Roissy ou d'Orly ; sauter quand vous apercevez la grosse croix formée par le canal du Parc du Château</p>
+
+    </div>
+</div>
+
+
+{% endblock %}

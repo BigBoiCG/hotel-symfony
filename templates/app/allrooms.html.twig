@@ -5,6 +5,21 @@
 {% block body %}
 <h1 class="text-center mt-4">Toutes nos chambres</h1>
 
+<div class="container my-4 d-flex flex-column align-items-center">
+  <h3 class="text-center mt-4">Filtrer par prix</h3>
+  <form action="filtered" method="post">
+        <label for="minSelect" class="form-label">Prix minimum</label>
+        <input type="range" class="form-range" value="0" min="0" max="1500" step="50" id="minSelect" name="minSelect" oninput="this.nextElementSibling.value = this.value">
+        <output>0</output>
+        <br>
+        <label for="maxSelect" class="form-label">Prix maximum</label>
+        <input type="range" class="form-range" value="1500" min="0" max="1500" step="50" id="maxSelect" name="maxSelect" oninput="this.nextElementSibling.value = this.value">
+        <output>1500</output>  
+        <br>
+    <button class="btn btn-primary mx-2" type="submit">Filtrer</button>
+  </form>
+</div>
+
 
 <div class="d-flex row">
 {% for chambre in chambres %}
@@ -23,4 +38,7 @@
 </div>
 {% endfor %}
 </div>
+
+
+
 {% endblock %}
