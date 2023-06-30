@@ -1,3 +1,8 @@
+ ROUTES :
+ - Login : 
+ - Register :
+ 
+ 
  DONE :
  - création des tables admin & chambre
  - make:user sur le Admin
