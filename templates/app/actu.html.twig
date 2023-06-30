@@ -5,6 +5,36 @@
 {% block body %}
 <h1 class="text-center mt-4">Dernières actualités</h1>
 
+        <div class="row">
+            {% for article in articles %}
+                <div class="col-md-4">
+                    <div class="card my-3 bg-light">
+                        <img src="{{ article.urlToImage }}" class="card-img-top rounded" alt="Image non disponible">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">{{ article.description }}</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Auteur:</strong>
+                                {% if article.author %}
+                                    {{ article.author }}
+                                {% else %}
+                                    Auteur inconnu
+                                {% endif %}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Date de publication:</strong>
+                                {{ article.publishedAt }}
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <a href="{{ article.url }}" class="btn btn-css">Lire l'article entier</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
 
 
 {% endblock %}

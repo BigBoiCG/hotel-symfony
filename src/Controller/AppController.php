@@ -162,7 +162,9 @@ class AppController extends AbstractController
         $allArticles = $newsapi->getEverything($q, null, null, null, null, null, 'fr', 'popularity', null, 20);
         // dd($newsapi->getSortBy()) : relevancy, popularity, publishedAt
         dd($allArticles);
-        return $this->render('app/actu.html.twig');
+        return $this->render('app/actu.html.twig', [
+            'articles' => $allArticles
+        ]);
     }
 
     #[Route('/contact', name: 'contact')]
@@ -181,5 +183,17 @@ class AppController extends AbstractController
     public function spa(): Response
     {
         return $this->render('app/spa.html.twig');
+    }
+
+    #[Route('/mentions', name: 'mentions')]
+    public function mentions(): Response
+    {
+        return $this->render('app/mentions.html.twig');
+    }
+
+    #[Route('/plan', name: 'plan')]
+    public function plan(): Response
+    {
+        return $this->render('app/plan.html.twig');
     }
 }

@@ -29,19 +29,19 @@
 - refaire le champ des avis (min/max, progression de 0.5)
 - Faire un affichage de toutes les chambres sur une seule page, utiliser un form pour envoyer en Get les paramètres de notre fonction 'chambres' et ainsi faire des recherches personnalisées (cf AppController)
 - page accès : plan très versaillais
-
- TODO : 
-- EN COURS : page spa : pas besoin de réservation ; faire une seule page, mais avec des renvois en interne
-- EN COURS : page hôtel : bullshittage de haut niveau ; animations bootstrap un peu fun ?
-- EN COURS : page contact : formulaire + mailer
-- EN COURS : finir l'affichage de l'API sur Actus
+- Page spa : pas besoin de réservation ; faire une seule page, mais avec des renvois en interne
+- Page hôtel : bullshittage de haut niveau
+- Modifier l'icône de l'onglet 
 - plan du site
-- Modifier l'icône de l'onglet
+
+ TODO :
+- EN COURS : finir l'affichage de l'API sur Actus
+- EN COURS : page contact : formulaire + mailer
 - multilingue : bouton EN/FR, traduction si on est chauds
-- Finaliser champs CRUD commande
-- mise en ligne :  
+- mise en ligne : 
    . envoyer le compte admin à Vincent + les liens des pages cachées de register et de login
    . mettre des vraies chambres
+   . remettre des images dans le slider (pour hôtel, spa, resto)
 
  ERREURS :
 

@@ -5,16 +5,43 @@
 {% block body %}
 
 <h1 class="text-center my-5">Qui sommes-nous ?</h1>
-<img src="{{ asset('images/hotel/hotel.jpg') }}" alt="" style="width: 100%; height: 500px; object-fit: cover;" class="my-5">
-<div class="container d-flex flex-row">
-    <p>L'histoire de l'Hôtel Symfony commence en 1854, lorsqu'Edmond Symfony, alors dirigeant de la petite banque familiale qu'il avait fondée, décide unilatéralement de mettre fin à ses activités bancaires. Prenant soin de ne pas prévenir ses clients pour ne pas les paniquer,  mais habité du besoin de faire prospérer leurs économies malgré tout, il décide de réinvestir les actifs de la banque dans un commerce sûr et stable. Et c'est ainsi que le 9 avril 1854, il acquiert un hôtel particulier à Versailles pour y fonder l'Hôtel Symfony.</p>
-    <div class="container">
+<img src="{{ asset('images/hotel/hotel.jpg') }}" alt="" style="width: 100%; height: 600px; object-fit: cover;" class="my-5">
 
+<div class="container d-flex flex-row align-items-center">
+    <p class="text-justify">L'histoire de l'Hôtel Symfony commence en 1864, lorsqu'Edmond Symfony, alors dirigeant de la petite banque familiale qu'il avait fondée, décide unilatéralement de mettre fin à ses activités bancaires. Prenant soin de ne pas prévenir ses clients pour ne pas les paniquer,  mais habité du besoin de faire prospérer leurs économies malgré tout, il décide de réinvestir les actifs de la banque dans un commerce sûr et stable. Et c'est ainsi que le 9 avril 1864, il acquiert un hôtel particulier à Versailles pour y fonder l'Hôtel Symfony.</p>
+    <div class="container">
         <img src="{{ asset('images/hotel/edmond.jpg') }}" alt="" style="width: 400px; height: 300px;">
         <figcaption class="figure-caption">Gravure d'époque représentant Edmond Symfony, peu avant la fondation de l'hôtel</figcaption>    
     </div>
+</div>
 
+<div class="container d-flex flex-row align-items-center">
+    <div class="container">
+        <img src="{{ asset('images/hotel/rats.jpg') }}" alt="" style="width: 400px; height: 300px; object-fit: cover">
+        <figcaption class="figure-caption">Edmond Symfony luttant héroïquement contre les rongeurs squatteurs</figcaption>    
+    </div>
+    <p class="text-justify">Les premières années de l'établissement sont difficiles. En effet, Edmond doit composer avec les locataires originels de l'établissement, un syndicat de copropriétaires composé de plusieurs milliers de rats. A peine un arrangement à l'amiable trouvé (de généreuses cargaisons de petites pilules de cyanure contre un départ rapide de l'immeuble), Edmond est rattrapé par les anciens clients de sa banque, a priori sceptiques face à son nouvel investissement, et qui à force de mensonges réussissent à convaincre les autorités fiscales de l'époque de la véracité de leurs accusations calomnieuses. Lassé par ces combats incessants et le manque de confiance de ses contemporains, Edmond tombe gravement malade, et doit laisser pendant de longues années la gestion de l'hôtel à son cousin espagnol, Edmondo Sinfonio, pendant que lui-même doit subir une longue cure aux Antilles. Il ne revient qu'en 1873 inspecter le fruit de son dur labeur.</p>
+</div>
 
+<div class="container d-flex flex-row align-items-center">
+    <p class="text-justify">Or durant cette période, l'hôtel a prospéré. Car Edmondo Sinfonio partage le sens commerçant de son cousin, en sachant habilement tirer parti des évènements historiques et de leur tournure. Ainsi, ayant accueilli de nombreux militaires prussiens en 1870 ainsi que des officiers contre-révolutionnaires durant la Commune, l'hôtel acquiert une réputation d'excellence tant au niveau national qu'international. Tirant parti de cette manne durement gagnée, Edmondo rénove les murs, transformant la modeste maisonnée en un établissement de haut standing. Lorsqu'Edmond Symfony reprend les rênes de son affaire, le commerce est florissant et les perspectives sont au beau fixe.</p>
+    <div class="container">
+        <img src="{{ asset('images/hotel/versailles.jpg') }}" alt="" style="width: 400px; height: 300px;">
+        <figcaption class="figure-caption">Photographie de l'hôtel après les rénovations en 1871 (colorisé)</figcaption>    
+    </div>
+</div>
+
+<div class="container d-flex flex-row align-items-center">
+    <div class="container">
+        <img src="{{ asset('images/hotel/occupation.jpg') }}" alt="" style="width: 400px; height: 300px; object-fit: cover">
+        <figcaption class="figure-caption">Visiteurs allemands enthousiastes devant l'entrée de l'Hôtel Symfony, 1943</figcaption>    
+    </div>
+    <p class="text-justify">Edmond disparaît en 1885, et l'hôtel est légué à son fils Hippolyte, puis à son propre fils Balthazar après lui; tous ont à coeur de continuer à faire vivre le commerce de leur père. S'ils continuent à accueillir le gratin de la société versaillaise ainsi que de prestigieux visiteurs, leur sucès international est particulièrement fort en Allemagne, et nombreux sont les touristes germaniques qui viennent avec empressement visiter l'hôtel. Lors de la signature du traité de Versailles en 1919, Otto von Bismarck lui-même serait venu noyer son chagrin au bar de l'hôtel, son propre grand-père lui ayant vanté les mérites de l'établissement qu'il avait visité en 1870. L'hôtel connaît un nouveau bond de popularité dans les années 1940, où la présence allemande s'accroît inexplicablement à Versailles. C'est notamment à cette époque que plusieurs clients, charmés par leur séjour, font don aux propriétaires d'inestimables oeuvres d'art acquises en toute légalité et que l'on peut encore admirer aujourd'hui dans les couloirs de l'hôtel</p>
+</div>
+
+<div class="container d-flex flex-column align-items-center mt-5">
+    <p class="text-justify">Aujourd'hui encore, l'hôtel est une affaire familiale, Philémon Symfony perpétuant le doux rêve de son aïeul Edmond. L'hôtel maintient cette réputation d'ordre, de soin, de diligence et somme toute d'excellence qui a fait son succès à travers les siècles, et qui continue à faire sa renommée tant nationale qu'internationale. Alors si vous souhaitez vous aussi vivre ce rêve, aventurez-vous dans les ruelles chargées d'histoire de Versailles, jusqu'à ce qui fut autrefois un si modeste hôtel particulier, et franchissez la porte surmontée du "SF" d'Edmond Symfony, où nos équipes se feront une joie de vous recevoir.</p>
+    <img src="{{ asset('images/hotel/symfony.jpg') }}" alt="" style="width: 400px; height: 300px; object-fit: cover">
 </div>
 
 {% endblock %}

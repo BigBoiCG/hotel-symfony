@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes-nous ?{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center my-5">Plan du site</h1>
+
+<div class="container">
+<ul>
+    <li class="my-3"><a href="{{ path('home') }}">Accueil</a></li>
+    <li>
+        Nos chambres
+        <ul>
+            <li class="my-3"><a href="{{ path('all_rooms') }}">Toutes les chambres</a></li>
+            <li class="my-3"><a href="{{ path('chambres_classiques', {min: 0, max: 100}) }}">Classique</a></li>
+            <li class="my-3"><a href="{{ path('chambres_confort', {min: 100, max: 500}) }}">Confort</a></li>
+            <li class="my-3"><a href="{{ path('chambres_suites', {min: 500, max: 10000}) }}">Suite</a></li>
+        </ul>
+    </li>
+    <li class="my-3">
+        Notre restaurant
+        <ul>
+            <li class="my-3"><a href="{{ path('resto', {select: "brasserie"}) }}">Brasserie</a></li>
+            <li class="my-3"><a href="{{ path('resto', {select: "degustation"}) }}">Dégustation</a></li>
+            <li class="my-3"><a href="{{ path('resto', {select: "diner"}) }}">Dîner</a></li>
+        </ul>
+    </li>
+    <li class="my-3">
+        Notre spa
+        <ul>
+            <li class="my-3"><a href="{{path('spa')}}">Détente</a></li>
+            <li class="my-3"><a href="{{path('spa')}}#relaxation">Relaxation</a></li>
+            <li class="my-3"><a href="{{path('spa')}}#plaisir">Plaisir</a></li>
+        </ul>
+    </li>
+    <li class="my-3"><a href="{{path('comments')}}">Vos avis</a></li>
+    <li class="my-3">
+        L'hôtel
+        <ul>
+            <li class="my-3"><a href="{{path('about')}}">Qui sommes-nous ?</a></li>
+            <li class="my-3"><a href="{{path('acces')}}">Accès</a></li>
+            <li class="my-3"><a href="{{path('contact')}}">Contact</a></li>
+        </ul>
+    </li>
+    <li class="my-3"><a href="{{path('actu')}}">Nos actualités</a></li>
+    <li class="my-3"><a href="{{path('contact')}}">Nous contacter</a></li>
+</ul>
+</div>
+
+
+{% endblock %}

@@ -5,24 +5,89 @@
 {% block body %}
 
 <h1 class="text-center my-4">Notre spa</h1>
-<p class="text-center text-muted my-2">Laissez-vous tenter par la grande variété de soins dispensés par notre personnel qualifiés, et ce au sein même de notre hôtel.</p>
+<p class="text-center text-muted my-2">Laissez-vous tenter par la grande variété de soins dispensés par notre personnel qualifiés, et ce directement dans le centre situé au sein même de notre hôtel.</p>
 <p class="text-center text-muted my-2">Pour toute réservation ou question, merci de vous adresser directement à la réception de l'hôtel</p>
 
 {# détente : massage, thalasso
 relaxation : sauna, hammam
 plaisir : bains de bière #}
-<div>
-<h3 class="text-center mt-5 mb-4">Soins détente</h3>
-<div class="container mx-auto d-flex flex-row">
-    <div>
-        <img src="{{ asset('images/spa/massage.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
-    </div>
-    <div class="container d-flex flex-column mx-auto">
-    <h5 class="mx-3 text-center">Massages</h5>
-    <p class="text-muted x-3 ">Bruits de malaxage</p>
+
+<div class="my-3">
+    <h3 class="text-center mt-5 mb-4">Soins détente</h3>
+    <div class="container mx-auto d-flex flex-row">
+        <div class="container mx-auto d-flex flex-row">
+            <div>
+                <img src="{{ asset('images/spa/massage.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+            </div>
+            <div class="container d-flex flex-column mx-auto justify-content-around">
+                <h5 class="mx-3 text-center">Massages</h5>
+                <p class="mx-3 ">Vous aimez quand on vous enduit d'huile ? Alors abandonnez-vous aux mains expertes de notre équipe, qui sauront vous faire ressentir des sensations jamais éprouvées. Au cadre relaxant de nos salons de massages s'ajoute une atmosphère musicale propice à la détente la plus absolue pouvant être adaptée à vos besoin, et ce que vous soyez fans de chants de baleines ou d'ASMR de bols tibétains (pour leur propre bien, tous nos masseurs sont sourds).</p>
+                <p class="mx-3 text-muted text-end">30 €</p>
+            </div>
+        </div>
     </div>
 </div>
+<div class="my-3">
+    <div class="container mx-auto d-flex flex-row">
+        <div class="container mx-auto d-flex flex-row">
+            <div>
+                <img src="{{ asset('images/spa/thalasso.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+            </div>
+            <div class="container d-flex flex-column mx-auto justify-content-around">
+                <h5 class="mx-3 text-center">Séance de thalassothérapie</h5>
+                <p class="mx-3 ">Si les mains calleuses de nos masseurs vous effraient, immergez-vous dans notre toute nouvelle acquisition, le TurboThalasso 4000, avec ses 700 jets massants de toutes les tailles et de toutes les intensités pour prendre soin du moindre muscle et orifice. Vous pourrez passer des heures à laisser la machine prendre soin de votre corps, vous donnant l'apparence extérieure d'un raisin sec laissé trop longtemps au soleil, mais vous offrant la paix intérieure et un alignement des chakras semblable à nul autre.</p>
+                <p class="mx-3 text-muted text-end">45 €</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="my-3" id="relaxation">
+    <h3 class="text-center mt-5 mb-4">Relaxation</h3>
+    <div class="container mx-auto d-flex flex-row">
+        <div class="container mx-auto d-flex flex-row">
+            <div>
+                <img src="{{ asset('images/spa/sauna.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+            </div>
+            <div class="container d-flex flex-column mx-auto justify-content-around">
+                <h5 class="mx-3 text-center">Sauna</h5>
+                <p class="mx-3 ">Comment les Finlandais peuvent-ils figurer parmi les pays les plus heureux du monde, alors qu'il fait constamment froid et nuit dans leur pays, et que personne d'autre au monde ne parle leur langue incompréhensible ? Le secret réside justement en un mot de ces érucations gutturales : "sauna". Découvez cette tradition finnoise millénaire qui consiste à se faire cuire lentement, à l'extérieur par la vapeur et à l'intérieur par la vodka.</p>
+                <p class="mx-3 text-muted text-end">15 €</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="my-3">
+    <div class="container mx-auto d-flex flex-row">
+        <div class="container mx-auto d-flex flex-row">
+            <div>
+                <img src="{{ asset('images/spa/hammam.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+            </div>
+            <div class="container d-flex flex-column mx-auto justify-content-around">
+                <h5 class="mx-3 text-center">Hammam</h5>
+                <p class="mx-3 ">Comme le sauna mais en plus nul, et en plus c'est plus cher.</p>
+                <p class="mx-3 text-muted text-end">20 €</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="my-3" id="plaisir">
+    <h3 class="text-center mt-5 mb-4">Pour le plaisir</h3>
+    <div class="container mx-auto d-flex flex-row">
+        <div class="container mx-auto d-flex flex-row">
+            <div>
+                <img src="{{ asset('images/spa/beer-bath.jpg') }}" alt="" style="object-fit: cover; height: 400px; width: 400px;">    
+            </div>
+            <div class="container d-flex flex-column mx-auto justify-content-around">
+                <h5 class="mx-3 text-center">Bains de bière</h5>
+                <p class="mx-3 ">Vous aimez la bière pression de notre restaurant, et vous vous demandez comment en imbiber encore plus votre corps ? Venez expérimenter nos bains de bière, dans la plus pure tradition ancestrale des pièges à touriste de Prague (photo non contractuelle, jolies demoiselles tchèques non comprises dans le prix du soin).</p>
+                <p class="mx-3 text-muted text-end">65 €</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 {% endblock %}
