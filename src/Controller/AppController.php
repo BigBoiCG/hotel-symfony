@@ -8,13 +8,19 @@ use App\Entity\Commande;
 use App\Form\CommandeType;
 use jcobhams\NewsApi\NewsApi;
 use App\Service\CallApiService;
+use Symfony\Component\Mime\Email;
 use App\Repository\AvisRepository;
 use App\Repository\SliderRepository;
 use App\Repository\ChambreRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AppController extends AbstractController
@@ -171,6 +177,32 @@ class AppController extends AbstractController
     public function contact(): Response
     {
         return $this->render('app/contact.html.twig');
+    }
+
+    #[Route('/contact/send', name: 'send')]
+    public function send(Request $request, MailerInterface $mailer): Response
+    {
+        $nom = $request->get('nom');
+        $prenom = $request->get('prenom');
+        $email = $request->get('email');
+        $categorie = $request->get('categorie');
+        $titre = $request->get('titre');
+        $message = $request->get('message');
+        $sendContact = (new Email())
+            ->from($email)
+            ->to('cgautriaud@orange.fr')
+            //->cc('cc@example.com')
+            //->bcc('bcc@example.com')
+            //->replyTo('fabien@example.com')
+            //->priority(Email::PRIORITY_HIGH)
+            // ->name($nom)
+            ->subject($titre)
+            ->text($message);
+ 
+        $mailer->send($sendContact);
+// dd($nom, $prenom, $email, $categorie, $titre, $message);
+        $this->addFlash('success', 'Merci de votre message, nous reviendrons vers vous au plus vite');
+        return $this->redirectToRoute('home');
     }
 
     #[Route('/hotel/acces', name: 'acces')]

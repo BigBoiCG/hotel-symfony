@@ -9,7 +9,7 @@
     <p>Une question ? Une remarque ? Une demande ? N'hésitez pas à nous contacter en remplissant le formulaire ci-dessous. Nous répondrons à vos messages aussi vite que possible, et nous nous efforcerons de satisfaire vos besoins autant que faire se peut</p>
 </div>
 <div class="container">
-    <form action="">
+    <form action="contact/send" method="post">
     <div class="form-group">
       <label for="nom" class="form-label mt-4">Nom</label>
       <input type="text" class="form-control" id="nom" name ="nom">
@@ -36,8 +36,8 @@
       <input type="text" class="form-control" id="titre" name ="titre">
     </div>
     <div class="form-group">
-      <label for="exampleTextarea" class="form-label mt-4">Votre message</label>
-      <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+      <label for="message" class="form-label mt-4">Votre message</label>
+      <textarea class="form-control" id="message" rows="3" name="message"></textarea>
     </div>
     <button type="submit" class="btn btn-primary my-4">Envoyer</button>
     </div>

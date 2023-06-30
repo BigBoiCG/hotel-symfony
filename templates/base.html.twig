@@ -16,7 +16,7 @@
         {% block javascripts %}
         {% endblock %}
     </head>
-    <body style="padding-top: 70px;">
+    <body style="padding-top: 70px;" id="body" class="fr">
     <nav class="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="{{ path('home') }}">Hotel Symfony</a>
@@ -88,8 +88,8 @@
       {% if app.user %}
         <a href="{{ path('admin_logout') }}" class="btn btn-danger">Se déconnecter</a>
       {% endif %}
-      <a href=""><img src="{{ asset('images/hotel/drapeau-fr.jpg') }}" alt="Drapeau français" style="height: 25px" class="mx-3"></a>
-      <a href=""><img src="{{ asset('images/hotel/drapeau-uk.jpg') }}" alt="Drapeau britannique" style="height: 25px" class="mx-3"></a>
+      <a href=""><img src="{{ asset('images/hotel/drapeau-fr.jpg') }}" alt="Drapeau français" style="height: 25px" class="mx-3" id="flag-fr"></a>
+      <a href=""><img src="{{ asset('images/hotel/drapeau-uk.jpg') }}" alt="Drapeau britannique" style="height: 25px" class="mx-3" id="flag-en"></a>
     </div>
   </div>
 </nav>
@@ -115,6 +115,22 @@
     document.getElementById("printer").addEventListener("click", function () {
       window.print();
     });
+      document.getElementById("flag-en").addEventListener("click", function () {
+        const body = document.getElementById("body")
+        if(body.className == "fr"){
+        body.classList.remove("fr")
+        body.classList.add("en")
+        event.preventDefault()
+        } else { event.preventDefault() }
+      });
+            document.getElementById("flag-fr").addEventListener("click", function () {
+        const body = document.getElementById("body")
+        if(body.className == "en"){
+        body.classList.remove("en")
+        body.classList.add("fr")
+        event.preventDefault()
+        } else { event.preventDefault() }
+      });    
 </script>
 
       <div class="col-md-5 offset-md-1 mb-3">

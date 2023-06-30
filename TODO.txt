@@ -33,17 +33,19 @@
 - Page hôtel : bullshittage de haut niveau
 - Modifier l'icône de l'onglet 
 - plan du site
+- Page contact : formulaire + mailer
 
  TODO :
 - EN COURS : finir l'affichage de l'API sur Actus
-- EN COURS : page contact : formulaire + mailer
-- multilingue : bouton EN/FR, traduction si on est chauds
+- multilingue : bouton EN/FR, trad au moins de la navbar et de la page d'accueil
 - mise en ligne : 
    . envoyer le compte admin à Vincent + les liens des pages cachées de register et de login
+   . recréer un profil admin
+   . remettre des commentaires
    . mettre des vraies chambres
    . remettre des images dans le slider (pour hôtel, spa, resto)
 
  ERREURS :
 
-
+ 
  
